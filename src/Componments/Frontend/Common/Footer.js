@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='d-flex justify-content-between footer-block'>
               <div>
                 <div className='fb-logo mb-4'>
-                  <img src={getImages('logo-silver-svg.svg')}/>
+                  <img src={getImages('logo-silver-svg.png')}/>
                 </div>
                 <div className='text-white mb-5'>3201 S. Federal Hwy Delray Beach, FL 33483</div>
                 <div className='fb-contact-info'>

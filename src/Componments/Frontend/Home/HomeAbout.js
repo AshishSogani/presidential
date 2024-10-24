@@ -23,9 +23,11 @@ const HomeAbout = () => {
                             <section className='panel'>
                                 <div className='panel-inner about-wrap d-flex align-items-center'>
                                     <div className='about-left w-50 wow fadeInLeft' data-wow-duration="1s" data-wow-delay="0.5s">
-                                        <img src={getImages('about-slide-1.png')} alt='about' style={{height:'100vh'}} />
-                                        <div className="hd-pos">
-                                            <span className='px-5'>Our Why</span>
+                                        <div className='position-relative d-inline-block'>
+                                            <img src={getImages('about-slide-1.png')} alt='about' style={{height:'100vh'}} />
+                                            <div className="hd-pos">
+                                                <span className='px-5'>Our Why</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='about-right w-50 wow fadeInRight' data-wow-duration="1s" data-wow-delay="1s">
@@ -47,9 +49,11 @@ const HomeAbout = () => {
                             <section className='panel'>
                                 <div className='panel-inner about-wrap d-flex align-items-center'>
                                     <div className='about-left w-50'>
-                                        <img src={getImages('about-slide-2.png')} alt='about' style={{height:'100vh'}} />
-                                        <div className="hd-pos">
-                                            <span className='px-5'>Presidential Difference</span>
+                                        <div className='position-relative d-inline-block'>
+                                            <img src={getImages('about-slide-2.png')} alt='about' style={{height:'100vh'}} />
+                                            <div className="hd-pos">
+                                                <span className='px-5'>Presidential Difference</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='about-right w-50'>
@@ -71,9 +75,11 @@ const HomeAbout = () => {
                             <section className='panel'>
                                 <div className='panel-inner about-wrap d-flex align-items-center'>
                                     <div className='about-left w-50'>
-                                        <img src={getImages('about-slide-3.png')} alt='about' style={{height:'100vh'}} />
-                                        <div className="hd-pos">
-                                            <span className='px-5'>Unmatched Service</span>
+                                        <div className='position-relative d-inline-block'>
+                                            <img src={getImages('about-slide-3.png')} alt='about' style={{height:'100vh'}} />
+                                            <div className="hd-pos">
+                                                <span className='px-5'>Unmatched Service</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='about-right w-50'>
@@ -95,9 +101,11 @@ const HomeAbout = () => {
                             <section className='panel'>
                                 <div className='panel-inner about-wrap d-flex align-items-center'>
                                     <div className='about-left w-50'>
-                                        <img src={getImages('about-slide-4.png')} alt='about' style={{height:'100vh'}} />
-                                        <div className="hd-pos">
-                                            <span className='px-5'>Relationships For Life</span>
+                                        <div className='position-relative d-inline-block'>
+                                            <img src={getImages('about-slide-4.png')} alt='about' style={{height:'100vh'}} />
+                                            <div className="hd-pos">
+                                                <span className='px-5'>Relationships For Life</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='about-right w-50'>

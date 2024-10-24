@@ -366,9 +366,6 @@
     .fv-bottom {
         padding: 20px 20px;
     }
-    .logos-wrap .slick-slide .inner {
-        margin: 0 40px;
-    }
     .cs-card {
         height: 338px;
     }
@@ -381,7 +378,7 @@
         padding-right: 20px;
     }
     .banner-title {
-        font-size: 2.5em;
+        font-size: 2em;
     }
     .service-box {
         margin-top: 20px;
@@ -494,7 +491,6 @@
         font-size: 11px;
     }
     .logos-wrap .slick-slide .inner {
-        margin: 0 20px;
         height: 70px;
     }
     .logos-wrap .slick-slide .inner img {

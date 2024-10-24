@@ -3,15 +3,10 @@ import Slider from "react-slick";
 import { getImages } from '../../Componments/Frontend/const';
 import HomeAbout from '../../Componments/Frontend/Home/HomeAbout';
 import ContactForm from '../../Componments/Frontend/Common/ContactForm';
+import ScrollMagicSlider from '../../Componments/Frontend/Home/ScrollMagicSlider';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 const carData = [
-    {
-        image: 'fv-img1.jpg',
-        title: '2024 Audi S5 Cabriolet',
-        price: '$64,995',
-        mileage: '575mi',
-    },
     {
         image: 'fv-img2.jpg',
         title: '2023 Bentley Bentayga',
@@ -25,6 +20,20 @@ const carData = [
         mileage: '11,682mi',
     },
     {
+        image: 'fv-img6.jpg',
+        title: '2019 Chevrolet Corvette',
+        price: '$99,995',
+        mileage: '3,026mi',
+    },
+]
+const carData1 = [
+    {
+        image: 'fv-img1.jpg',
+        title: '2024 Audi S5 Cabriolet',
+        price: '$64,995',
+        mileage: '575mi',
+    },
+    {
         image: 'fv-img4.jpg',
         title: '1969 Chevrolet Camaro SS',
         price: '$69,995',
@@ -35,12 +44,6 @@ const carData = [
         title: '2021 Chevrolet Corvette',
         price: '$71,995',
         mileage: '8,030mi',
-    },
-    {
-        image: 'fv-img6.jpg',
-        title: '2019 Chevrolet Corvette',
-        price: '$99,995',
-        mileage: '3,026mi',
     },
 ]
 const Home = () => {
@@ -58,23 +61,46 @@ const Home = () => {
     //         }
     //     }
     // }, []);
-    var settings = {
-        speed: 2000,
+    var slSettings = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        slidesToShow: 8,
+        slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
-        centerMode: false,
+        speed: 2000,
         cssEase: 'linear',
-        draggable: false,
-        focusOnSelect: false,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true,
-        infinite: true,
-        initialSlide: 1,
-        arrows: false,
-        buttons: false
+        responsive: [
+            {
+                breakpoint: 1320,
+                settings: {
+                    slidesToShow: 8,
+                    speed: 12000,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 1080,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 680,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            }]
     };
     var featuredSettings1 = {
         speed: 6000,
@@ -130,7 +156,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='banner-pos'>
-                        <div className='banner-title wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s"><span className='text-theme'>Experience & Excellence</span> <br />Over 100 Cars in Stock</div>
+                        <div className='banner-title wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s"><span className='text-theme'>Experience Excellence</span> <br />Family Owned & Operated</div>
                         <div className='mt-50 text-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
                             <button className='btn-black-theme' type='button'>View Inventory</button>
                         </div>
@@ -166,6 +192,71 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+                <section className='featured-vehicles-wrap'>
+                    <div className='container'>
+                        <div className='main-title tex-center'>
+                            <span className='position-relative add-before-border add-after-border'>Featured Vehicles</span>
+                        </div>
+                        <div className='featured-vehicles-block'>
+                            <Slider {...featuredSettings1}>
+                                {carData.map((car, index) => (
+                                    <div key={index}>
+                                        <div className='inner'>
+                                            <article className="cs-card cs-card--2 fv-box">
+                                                <div className="cs-card__img fv-top"
+                                                    style={{
+                                                        backgroundImage: `url(${getImages(car.image)})`,
+                                                    }}
+                                                ></div>
+                                                <a href="#" className="cs-card_link">
+                                                    <div className="cs-card__img--hover fv-top"
+                                                        style={{
+                                                            backgroundImage: `url(${getImages(car.image)})`,
+                                                        }}></div>
+                                                </a>
+                                                <div className="fv-bottom">
+                                                    <div className="sm-title text-orange font-bold">{car.title}</div>
+                                                    <div className="d-flex align-items-center justify-content-between mt-1">
+                                                        <div className="sm-title">{car.price}</div>
+                                                        <div className="sm-title opacity-0-4">{car.mileage}</div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Slider>
+                            <Slider {...featuredSettings2}>
+                                {carData1.map((car, index) => (
+                                    <div key={index}>
+                                        <div className='inner'>
+                                            <article className="cs-card cs-card--2 fv-box">
+                                                <div className="cs-card__img fv-top"
+                                                    style={{
+                                                        backgroundImage: `url(${getImages(car.image)})`,
+                                                    }}
+                                                ></div>
+                                                <a href="#" className="cs-card_link">
+                                                    <div className="cs-card__img--hover fv-top"
+                                                        style={{
+                                                            backgroundImage: `url(${getImages(car.image)})`,
+                                                        }}></div>
+                                                </a>
+                                                <div className="fv-bottom">
+                                                    <div className="sm-title text-orange font-bold">{car.title}</div>
+                                                    <div className="d-flex align-items-center justify-content-between mt-1">
+                                                        <div className="sm-title">{car.price}</div>
+                                                        <div className="sm-title opacity-0-4">{car.mileage}</div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Slider>
+                        </div>
+                    </div>
+                </section>
                 <section className='service-center-wrap'>
                     <div className='container'>
                         <div className='service-center-box d-flex align-items-center wow fadeIn' data-wow-duration="1s" data-wow-delay="0.5s">
@@ -185,7 +276,7 @@ const Home = () => {
                     </div>
                 </section>
                 <section className='logos-wrap wow fadeIn' data-wow-duration="1s" data-wow-delay="0.5s">
-                    <Slider {...settings}>
+                    <Slider {...slSettings}>
                         <div>
                             <div className='inner'>
                                 <img src={getImages('logo-benz.webp')} alt='' />
@@ -269,71 +360,7 @@ const Home = () => {
                     </Slider>
                 </section>
                 <HomeAbout />
-                <section className='featured-vehicles-wrap'>
-                    <div className='container'>
-                        <div className='main-title tex-center'>
-                            <span className='position-relative add-before-border add-after-border'>Featured Vehicles</span>
-                        </div>
-                        <div className='featured-vehicles-block'>
-                            <Slider {...featuredSettings1}>
-                                {carData.map((car, index) => (
-                                    <div key={index}>
-                                        <div className='inner'>
-                                            <article className="cs-card cs-card--2 fv-box">
-                                                <div className="cs-card__img fv-top"
-                                                    style={{
-                                                        backgroundImage: `url(${getImages(car.image)})`,
-                                                    }}
-                                                ></div>
-                                                <a href="#" className="cs-card_link">
-                                                    <div className="cs-card__img--hover fv-top"
-                                                        style={{
-                                                            backgroundImage: `url(${getImages(car.image)})`,
-                                                        }}></div>
-                                                </a>
-                                                <div className="fv-bottom">
-                                                    <div className="sm-title text-orange font-bold">{car.title}</div>
-                                                    <div className="d-flex align-items-center justify-content-between mt-1">
-                                                        <div className="sm-title">{car.price}</div>
-                                                        <div className="sm-title opacity-0-4">{car.mileage}</div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                ))}
-                            </Slider>
-                            <Slider {...featuredSettings2}>
-                                {carData.map((car, index) => (
-                                    <div key={index}>
-                                        <div className='inner'>
-                                            <article className="cs-card cs-card--2 fv-box">
-                                                <div className="cs-card__img fv-top"
-                                                    style={{
-                                                        backgroundImage: `url(${getImages(car.image)})`,
-                                                    }}
-                                                ></div>
-                                                <a href="#" className="cs-card_link">
-                                                    <div className="cs-card__img--hover fv-top"
-                                                        style={{
-                                                            backgroundImage: `url(${getImages(car.image)})`,
-                                                        }}></div>
-                                                </a>
-                                                <div className="fv-bottom">
-                                                    <div className="sm-title text-orange font-bold">{car.title}</div>
-                                                    <div className="d-flex align-items-center justify-content-between mt-1">
-                                                        <div className="sm-title">{car.price}</div>
-                                                        <div className="sm-title opacity-0-4">{car.mileage}</div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                ))}
-                            </Slider>
-                        </div>
-                    </div>
-                </section>
+                {/* <ScrollMagicSlider/> */}
                 <section className='getin-touch-wrap'>
                     <div className='container'>
                         <div className='main-title tex-center'>
@@ -341,7 +368,7 @@ const Home = () => {
                         </div>
                         <div className='mt-5 row mlr-40'>
                             <div className='col-md-6 pt-2 wow fadeInLeft' data-wow-duration="1s" data-wow-delay="0.5s">
-                                <iframe src="https://snazzymaps.com/embed/654124" width="100%" height="465" style={{border:'none'}}></iframe>
+                                <iframe src="https://snazzymaps.com/embed/654124" width="100%" height="465" style={{ border: 'none' }}></iframe>
 
                                 <div className='gt-info mt-5'>
                                     <div className='gt-address'>3201 S. Federal Hwy Delray Beach, FL 33483</div>
@@ -349,7 +376,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className='col-md-6 wow fadeInRight' data-wow-duration="1s" data-wow-delay="1s">
-                                <ContactForm/>
+                                <ContactForm />
                             </div>
                         </div>
                     </div>

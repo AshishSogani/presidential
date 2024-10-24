@@ -379,7 +379,7 @@ body {
     margin-top: 120px;
 }
 .featured-vehicles-wrap {
-    padding: 100px 0;
+    padding: 0 0 80px;
     width: 100%;
     overflow: hidden;
 }
@@ -702,7 +702,6 @@ body {
     overflow: hidden;
 }
 .logos-wrap .slick-slide .inner {
-    margin: 0 55px;
     display: flex !important;
     align-items: center;
     height: 100px;
