@@ -27,7 +27,8 @@ const Header = () => {
                     <div className="header-block d-flex align-items-center justify-content-between">
                         <div className="header-left">
                             <Link to="/" className="main-logo d-block">
-                                <img src={getImages('main-logo.svg')} alt='logo' />
+                                <img className='d-none d-lg-block' src={getImages('main-logo.svg')} alt='logo' />
+                                <img className='d-lg-none' src={getImages('logo-silver-svg.svg')} alt='logo' />
                             </Link>
                         </div>
                         <div className="header-right d-flex align-items-center justify-content-between">

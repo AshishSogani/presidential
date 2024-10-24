@@ -17,7 +17,7 @@ const Footer = () => {
                   <a href='mailto:sales@prezauto1.com' className='text-orange mt-1 d-inline-block'>sales@prezauto1.com</a>
                 </div>
               </div>
-              <div>
+              <div className='d-none d-md-block'>
                 <div className='footer-title'>Navigation</div>
                 <ul className='footer-menu'>
                   <li>
@@ -34,7 +34,7 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div>
+              <div className='d-none d-md-block'>
                 <div className='footer-title'>About</div>
                 <ul className='footer-menu'>
                   <li>
@@ -52,16 +52,16 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <div className='footer-title'>Stay Connected</div>
+                <div className='footer-title d-none d-md-block'>Stay Connected</div>
                 <ul className='footer-menu'>
                   <li>
-                    <a href='#'><span className='social-icon'><img src={getImages('ico-facebook.svg')}/></span> Facebook</a>
+                    <a href='#'><span className='social-icon'><img src={getImages('ico-facebook.svg')}/></span> <span className='d-none d-md-block'>Facebook</span></a>
                   </li>
                   <li>
-                    <a href='#'><span className='social-icon'><img src={getImages('ico-twitter.svg')}/></span> Twtiter</a>
+                    <a href='#'><span className='social-icon'><img src={getImages('ico-twitter.svg')}/></span> <span className='d-none d-md-block'>Twtiter</span></a>
                   </li>
                   <li>
-                    <a href='#'><span className='social-icon'><img src={getImages('ico-instagram.svg')}/></span> Instagram</a>
+                    <a href='#'><span className='social-icon'><img src={getImages('ico-instagram.svg')}/></span> <span className='d-none d-md-block'>Instagram</span></a>
                   </li>
                 </ul>
               </div>

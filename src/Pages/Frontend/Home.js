@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import { Controller, Scene } from 'react-scrollmagic';
-import { Tween, Timeline } from 'react-gsap';
+import Slider from "react-slick";
 import { getImages } from '../../Componments/Frontend/const';
+import HomeAbout from '../../Componments/Frontend/Home/HomeAbout';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 const carData = [
     {
         image: 'fv-img1.jpg',
@@ -42,21 +44,77 @@ const carData = [
 ]
 const Home = () => {
     const marqueeRef = useRef(null);
-    useEffect(() => {
-        const root = document.documentElement;
-        const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
-        const marqueeContent = marqueeRef.current;
+    // useEffect(() => {
+    //     const root = document.documentElement;
+    //     const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+    //     const marqueeContent = marqueeRef.current;
 
-        if (marqueeContent) {
-            root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+    //     if (marqueeContent) {
+    //         root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 
-            for (let i = 0; i < marqueeElementsDisplayed; i++) {
-                marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-            }
-        }
-    }, []);
+    //         for (let i = 0; i < marqueeElementsDisplayed; i++) {
+    //             marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    //         }
+    //     }
+    // }, []);
+    var settings = {
+        speed: 2000,
+        autoplay: true,
+        autoplaySpeed: 0,
+        centerMode: false,
+        cssEase: 'linear',
+        draggable:false,
+        focusOnSelect:false,
+        pauseOnFocus:false,
+        pauseOnHover:false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        infinite: true,
+        initialSlide: 1,
+        arrows: false,
+        buttons: false
+    };
+    var featuredSttings1 = {
+        speed: 6000,
+        autoplay: true,
+        autoplaySpeed: 0,
+        centerMode: false,
+        cssEase: 'linear',
+        draggable:false,
+        focusOnSelect:true,
+        pauseOnFocus:true,
+        pauseOnHover:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        infinite: true,
+        initialSlide: 1,
+        arrows: false,
+        buttons: false,
+        rtl:true
+    };
+    var featuredSttings2 = {
+        speed: 6000,
+        autoplay: true,
+        autoplaySpeed: 0,
+        centerMode: false,
+        cssEase: 'linear',
+        draggable:false,
+        focusOnSelect:true,
+        pauseOnFocus:true,
+        pauseOnHover:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        infinite: true,
+        initialSlide: 1,
+        arrows: false,
+        buttons: false
+    };
     return (
         <>
+        <div className='parallax-wrap'>
             <section className="banner-wrap home-banner py-0">
                 <div className='video-block'>
                     <div className='video-container'>
@@ -64,8 +122,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='banner-pos'>
-                    <div className='banner-title'><span className='text-theme'>Experience & Excellence</span> <br />Over 100 Cars in Stock</div>
-                    <div className='mt-50 text-center'>
+                    <div className='banner-title wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s"><span className='text-theme'>Experience & Excellence</span> <br />Over 100 Cars in Stock</div>
+                    <div className='mt-50 text-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
                         <button className='btn-black-theme' type='button'>View Inventory</button>
                     </div>
                 </div>
@@ -73,25 +131,25 @@ const Home = () => {
             <section className='services-wrap'>
                 <div className='container'>
                     <div className='row mlr-40'>
-                        <div className='col-md-6'>
+                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
                             <a href="#" className='service-box d-inline-block'>
                                 <img src={getImages('slide-1.png')} alt='' />
                                 <div className='service-pos'><span>View Inventory</span></div>
                             </a>
                         </div>
-                        <div className='col-md-6'>
+                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
                             <a href="#" className='service-box d-inline-block'>
                                 <img src={getImages('slide-2.png')} alt='' />
                                 <div className='service-pos'><span>Sell or Trade</span></div>
                             </a>
                         </div>
-                        <div className='col-md-6'>
+                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="1.5s">
                             <a href="#" className='service-box d-inline-block'>
                                 <img src={getImages('slide-3.png')} alt='' />
                                 <div className='service-pos'><span>Service Center</span></div>
                             </a>
                         </div>
-                        <div className='col-md-6'>
+                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="2s">
                             <a href="#" className='service-box d-inline-block'>
                                 <img src={getImages('slide-4.png')} alt='' />
                                 <div className='service-pos'><span>Specials</span></div>
@@ -102,7 +160,7 @@ const Home = () => {
             </section>
             <section className='service-center-wrap'>
                 <div className='container'>
-                    <div className='service-center-box d-flex align-items-center'>
+                    <div className='service-center-box d-flex align-items-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
                         <div className='sc-left'>
                             <div className='lg-title'>Service Center</div>
                             <ul className='common-list'>
@@ -118,160 +176,153 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='logos-wrap'>
-                <div className='container'>
-                    <div className='marquee'>
-                        <ul ref={marqueeRef} className="marquee-content">
-                            <li>
+            <section className='logos-wrap wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
+                    <Slider {...settings}>
+                        <div>
+                            <div className='inner'>
                                 <img src={getImages('logo-benz.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('porsche-logo.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('maserati-logo.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('ferrari-logo.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('bmw-logo.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('audi.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('logo-lambo.webp')} alt='' />
-                            </li>
-                            <li>
-                                <img src={getImages('landrover-logo.webp')} alt='' />
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('porsche-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('maserati-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('ferrari-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('bmw-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('audi.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('logo-lambo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('landrover-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('logo-benz.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('porsche-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('maserati-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('ferrari-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('bmw-logo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('audi.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('logo-lambo.webp')} alt='' />
+                        </div>
+                        </div>
+                        <div>
+                        <div className='inner'>
+                            <img src={getImages('landrover-logo.webp')} alt='' />
+                        </div>
                     </div>
-                </div>
+                    </Slider>
             </section>
-            <section className='parallax-wrap'>
-                <Controller>
-                    <Scene
-                        triggerHook="onLeave"
-                        duration="100%"
-                        pin
-                    >
-                        <Timeline
-                            wrapper={<div id="pinContainer" />}
-                        >
-                            <Tween
-                                from={{ y: '0%' }}
-                                to={{ y: '0%' }}
-                            >
-                                <section className='panel'>
-                                    <div className='panel-inner'>
-                                        <section className='about-wrap d-flex align-items-center'>
-                                            <div className='about-left w-50'>
-                                                <img src={getImages('about-bg.webp')} alt='about' />
-                                                <div className="hd-pos">
-                                                    <span className='px-5'>About Us</span>
-                                                </div>
-                                            </div>
-                                            <div className='about-right w-50'>
-                                                <div className='mxw-540'>
-                                                    <div className='about-count mb-5'>01</div>
-                                                    <p>Explore our curated selection of the world’s finest luxury vehicles, where cutting-edge innovation meets timeless craftsmanship. From sleek sedans to high-performance SUVs, discover the car that complements your lifestyle.</p>
-                                                    <div className='text-end mt-120'>
-                                                        <a href='#' className='btn-black-theme md-btn'>View Inventory</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </section>
-                            </Tween>
-                            <Tween
-                                from={{ x: '100%' }}
-                                to={{ x: '0%' }}
-                            >
-                                <section className='panel'>
-                                    <div className='panel-inner'>
-                                        <section className='about-wrap d-flex align-items-center'>
-                                            <div className='about-left w-50'>
-                                                <img src={getImages('about-bg.webp')} alt='about' />
-                                                <div className="hd-pos">
-                                                    <span className='px-5'>About Us</span>
-                                                </div>
-                                            </div>
-                                            <div className='about-right w-50'>
-                                                <div className='mxw-540'>
-                                                    <div className='about-count mb-5'>02</div>
-                                                    <p>Explore our curated selection of the world’s finest luxury vehicles, where cutting-edge innovation meets timeless craftsmanship. From sleek sedans to high-performance SUVs, discover the car that complements your lifestyle.</p>
-                                                    <div className='text-end mt-120'>
-                                                        <a href='#' className='btn-black-theme md-btn'>View Inventory</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </section>
-                            </Tween>
-                        </Timeline>
-                    </Scene>
-                </Controller>
-            </section>
+            <HomeAbout/>
             <section className='featured-vehicles-wrap'>
                 <div className='container'>
                     <div className='main-title tex-center'>
                         <span className='position-relative add-before-border add-after-border'>Featured Vehicles</span>
                     </div>
-                    <div className='d-flex mlr-35 marquee-content2' ref={marqueeRef}>
-                        {carData.map((car, index) => (
-                            <div className="col-md-4" key={index}>
-                                <article className="cs-card cs-card--2 fv-box">
-                                    <div className="cs-card__img fv-top"
-                                        style={{
-                                            backgroundImage: `url(${getImages(car.image)})`,
-                                        }}
-                                    ></div>
-                                    <a href="#" className="cs-card_link">
-                                        <div className="cs-card__img--hover fv-top"
-                                            style={{
-                                                backgroundImage: `url(${getImages(car.image)})`,
-                                            }}></div>
-                                    </a>
-                                    <div className="fv-bottom">
-                                        <div className="sm-title text-orange font-bold">{car.title}</div>
-                                        <div className="d-flex align-items-center justify-content-between mt-1">
-                                            <div className="sm-title">{car.price}</div>
-                                            <div className="sm-title opacity-0-4">{car.mileage}</div>
-                                        </div>
+                    <div className='featured-vehicles-block'>
+                        <Slider {...featuredSttings1}>
+                            {carData.map((car, index) => (
+                                <div>
+                                    <div className='inner'>
+                                        <article className="cs-card cs-card--2 fv-box">
+                                            <div className="cs-card__img fv-top"
+                                                style={{
+                                                    backgroundImage: `url(${getImages(car.image)})`,
+                                                }}
+                                            ></div>
+                                            <a href="#" className="cs-card_link">
+                                                <div className="cs-card__img--hover fv-top"
+                                                    style={{
+                                                        backgroundImage: `url(${getImages(car.image)})`,
+                                                    }}></div>
+                                            </a>
+                                            <div className="fv-bottom">
+                                                <div className="sm-title text-orange font-bold">{car.title}</div>
+                                                <div className="d-flex align-items-center justify-content-between mt-1">
+                                                    <div className="sm-title">{car.price}</div>
+                                                    <div className="sm-title opacity-0-4">{car.mileage}</div>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                </article>
-                            </div>
-                        ))}
-                    </div>
-                    <div className='d-flex mlr-35 marquee-content' ref={marqueeRef}>
-                        {carData.map((car, index) => (
-                            <div className="col-md-4" key={index}>
-                                <article className="cs-card cs-card--2 fv-box">
-                                    <div className="cs-card__img fv-top"
-                                        style={{
-                                            backgroundImage: `url(${getImages(car.image)})`,
-                                        }}
-                                    ></div>
-                                    <a href="#" className="cs-card_link">
-                                        <div className="cs-card__img--hover fv-top"
-                                            style={{
-                                                backgroundImage: `url(${getImages(car.image)})`,
-                                            }}></div>
-                                    </a>
-                                    <div className="fv-bottom">
-                                        <div className="sm-title text-orange font-bold">{car.title}</div>
-                                        <div className="d-flex align-items-center justify-content-between mt-1">
-                                            <div className="sm-title">{car.price}</div>
-                                            <div className="sm-title opacity-0-4">{car.mileage}</div>
-                                        </div>
+                                </div>
+                            ))}
+                        </Slider>
+                        <Slider {...featuredSttings2}>
+                            {carData.map((car, index) => (
+                                <div>
+                                    <div className='inner'>
+                                        <article className="cs-card cs-card--2 fv-box">
+                                            <div className="cs-card__img fv-top"
+                                                style={{
+                                                    backgroundImage: `url(${getImages(car.image)})`,
+                                                }}
+                                            ></div>
+                                            <a href="#" className="cs-card_link">
+                                                <div className="cs-card__img--hover fv-top"
+                                                    style={{
+                                                        backgroundImage: `url(${getImages(car.image)})`,
+                                                    }}></div>
+                                            </a>
+                                            <div className="fv-bottom">
+                                                <div className="sm-title text-orange font-bold">{car.title}</div>
+                                                <div className="d-flex align-items-center justify-content-between mt-1">
+                                                    <div className="sm-title">{car.price}</div>
+                                                    <div className="sm-title opacity-0-4">{car.mileage}</div>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                </article>
-                            </div>
-                        ))}
+                                </div>
+                            ))}
+                        </Slider>
                     </div>
                 </div>
             </section>
@@ -281,14 +332,14 @@ const Home = () => {
                         <span className='position-relative add-before-border add-after-border'>Get in Touch</span>
                     </div>
                     <div className='mt-5 row mlr-40'>
-                        <div className='col-md-6 pt-2'>
+                        <div className='col-md-6 pt-2 wow fadeInLeft' data-wow-duration="1s" data-wow-delay="0.5s">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.9641580392713!2d-80.0727677!3d26.4246332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8e041ac09b827%3A0xe449141e674b46fc!2s3201%20S%20Federal%20Hwy%2C%20Delray%20Beach%2C%20FL%2033483%2C%20USA!5e0!3m2!1sen!2sin!4v1729681912393!5m2!1sen!2sin" width="100%" height="465" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                             <div className='gt-info mt-5'>
                                 <div className='gt-address'>3201 S. Federal Hwy Delray Beach, FL 33483</div>
                                 <div className='gt-phone mt-2'>(561) 266-000</div>
                             </div>
                         </div>
-                        <div className='col-md-6'>
+                        <div className='col-md-6 wow fadeInRight' data-wow-duration="1s" data-wow-delay="1s">
                             <div className='custom-form'>
                                 <div className='form-group'>
                                     <label>Full Name</label>
@@ -314,6 +365,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            </div>
         </>
     )
 }

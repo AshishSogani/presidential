@@ -1,0 +1,493 @@
+@media(max-width: 1500px) {
+    .main-menu ul li a {
+        padding: 15px 12px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .banner-title {
+        font-size: 4em;
+        line-height: 1.3em;
+    }
+    .service-pos {
+        font-size: 2.2em;
+    }
+    .lg-title {
+        font-size: 2.2em;
+        line-height: 1.3em;
+    }
+    .about-count {
+        font-size: 5em;
+    }
+    .about-right p {
+        font-size: 1.3em;
+        line-height: 2em;
+    }
+}
+@media(max-width: 1280px) {
+    .main-menu ul li a {
+        padding: 15px 12px;
+    }
+    .header-wrap .btn-black-theme {
+        padding: 8px 17px 8px;
+    }
+    .mlr-40 {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    .mlr-40 [class^="col-"] {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .service-box {
+        margin-top: 50px;
+        height: 288px;
+    }
+    .service-box img {
+        height: 288px;
+    }
+    .sc-left {
+        padding: 0 0 0 45px;
+    }
+    .about-count {
+        margin-bottom: 1.5rem !important;
+    }
+    .about-right {
+        padding-left: 50px;
+    }
+    .main-title {
+        font-size: 3em;
+    }
+    .add-before-border:before,
+    .add-before-border:after {
+        top: 55%;
+    }
+    .mlr-35 {
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+    }
+    .mlr-35 [class^="col-"] {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+@media(max-width: 1200px) {
+    /* Mobile Menu */
+    .mobile-inner-header {
+        display: block;
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 40px;
+        height: 24px;
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+
+    .mobile-inner-nav {
+        background-color: rgba(3, 28, 62, .9);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding-top: 30px;
+        padding-bottom: 80px;
+        display: none;
+        z-index: 9;
+        height: 100%;
+        overflow: auto
+    }
+
+    .mobile-inner-header-icon {
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        float: right;
+        position: relative;
+        -webkit-transition: background .5s;
+        -moz-transition: background .5s;
+        -o-transition: background .5s;
+        transition: background .5s;
+        margin-top: 6px
+    }
+
+    .mobile-inner-header-icon {
+        color: #fff;
+        height: 20px;
+        font-size: 25px;
+        text-align: center;
+        float: right;
+        width: 40px;
+        position: relative;
+        -webkit-transition: background .5s;
+        -moz-transition: background .5s;
+        -o-transition: background .5s;
+        transition: background .5s;
+        z-index: 99;
+        margin-top: 4px
+    }
+
+    .mobile-inner-header-icon:hover {
+        cursor: pointer
+    }
+
+    .mobile-inner-header-icon span {
+        position: absolute;
+        left: calc((100% - 20px)/ 2);
+        top: calc((100% - 22px)/ 2);
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    .mobile-inner-header-icon.active span:nth-child(1) {
+        transform: translateY(4px) rotate(0)
+    }
+
+    .mobile-inner-header-icon.active span:nth-child(2) {
+        transform: translateY(-4px) rotate(0)
+    }
+
+    .mobile-inner-header-icon.active span:nth-child(3) {
+        display: none;
+    }
+
+    .mobile-inner-header-icon.active span:nth-child(1) {
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-name: clickfirst
+    }
+
+    .mobile-inner-header-icon.active span:nth-child(2) {
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-name: clicksecond
+    }
+
+    @keyframes clickfirst {
+        0% {
+            transform: translateY(4px) rotate(0)
+        }
+
+        100% {
+            transform: translateY(0) rotate(45deg)
+        }
+    }
+
+    @keyframes clicksecond {
+        0% {
+            transform: translateY(-4px) rotate(0)
+        }
+
+        100% {
+            transform: translateY(0) rotate(-45deg)
+        }
+    }
+
+    .mobile-inner-header-icon-out span:nth-child(1) {
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-name: outfirst
+    }
+
+    .mobile-inner-header-icon-out span:nth-child(2) {
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-name: outsecond;
+        margin-top: 3px;
+        top: calc((100% - 20px)/ 2)
+    }
+
+    .mobile-inner-header-icon.active span:nth-child(2) {
+        top: calc((100% - 28px) / 2);
+    }
+
+    .mobile-inner-header-icon-out span:nth-child(3) {
+        display: block;
+        top: calc((100% - 17.5px)/ 2)
+    }
+
+    @keyframes outfirst {
+        0% {
+            transform: translateY(0) rotate(-45deg)
+        }
+
+        100% {
+            transform: translateY(-4px) rotate(0)
+        }
+    }
+
+    @keyframes outsecond {
+        0% {
+            transform: translateY(0) rotate(45deg)
+        }
+
+        100% {
+            transform: translateY(4px) rotate(0)
+        }
+    }
+
+    .mobile-inner-header-icon.active {
+        z-index: 10;
+        position: fixed;
+        top: 25px;
+        right: 18px;
+    }
+
+    .mobile-inner-header-icon.mobile-inner-header-icon-click span {
+        background-color: #000;
+    }
+
+    .menu-block {
+        background: #161616;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: -100%;
+        width: 300px !important;
+        transition: all .5s ease-in-out 0s;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 20px;
+        padding-bottom: 0;
+        border-top: none;
+        overflow-y: auto;
+        height: 100%;
+        margin-left: 0;
+        display: block !important;
+        box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    }
+
+    .menu-block.active {
+        right: 0;
+    }
+
+    .main-menu ul {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        display: block !important;
+        padding: 15px 0;
+    }
+
+    .main-menu>ul>li {
+        display: block;
+        padding: 0;
+        border-bottom: solid 1px #646060;
+    }
+    .main-menu>ul>li:last-child {
+        border-bottom: none;
+    }
+    .main-menu ul li a {
+        padding: 13px 20px 13px 30px;
+        display: block;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .overflow-active {
+        overflow: hidden;
+    }
+    .overflow-bg {
+        background: rgb(0 0 0 / 20%);
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        z-index: 1;
+    }
+    .overflow-bg.active {
+        display: block;
+    }
+    .sub-mega-menu {
+        position: relative;
+        top: inherit;
+        right: 0;
+    }
+    .mxw-540 {
+        max-width: 90%;
+    }
+    .featured-vehicles-wrap [class^="col-"] {
+        width: 40%;
+    }
+    .featured-vehicles-wrap .sm-title {
+        text-align: center;
+    }
+}
+@media(max-width: 992px) {  
+    .service-box {
+        margin-top: 30px;
+        height: 230px;
+    }
+    .service-box img {
+        height: 230px;
+    }
+    .mlr-40 {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .mlr-40 [class^="col-"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .service-pos {
+        font-size: 2em;
+    }
+    .banner-title {
+        font-size: 3em;
+    }
+    .sc-right:after {
+        width: 70px;
+    }
+    .sc-right .btn-white-theme {
+        right: 25px;
+        bottom: 25px;
+    }
+    .sc-right {
+        height: 310px;
+    }
+    .sc-left {
+        padding: 0 0 0 25px;
+    }
+    .featured-vehicles-wrap [class^="col-"] {
+        width: 50%;
+    }
+    .fv-bottom {
+        padding: 20px 20px;
+    }
+}
+@media(max-width: 768px) {  
+    .container, 
+    .container-sm {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .banner-title {
+        font-size: 2.5em;
+    }
+    .service-box {
+        margin-top: 20px;
+    }
+    .service-center-box {
+        display: block !important;
+        background-color: #181616;
+    }
+    .lg-title {
+        font-size: 2em;
+        line-height: 1.3em;
+    }
+    .sc-left {
+        padding: 20px 0 0 40px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .common-list {
+        padding-top: 0;
+    }
+    .common-list li {
+        font-size: 0.9em;
+        margin-top: 18px;
+    }
+    .sc-right:after {
+        width: 100%;
+        height: 100px;
+        right: 0;
+        background-image: linear-gradient(to bottom, #181616, rgba(24, 22, 22, 0) 75%);
+    }
+    .sc-right {
+        width: 100%;
+        background-size: 100%;
+        margin-top: -60px;
+        height: 204px;
+    }
+    .sc-right .btn-white-theme {
+        right: inherit;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .about-wrap {
+        display: block !important;
+    }
+    .about-left {
+        width: 100% !important;
+    }
+    .about-left img {
+        height: 220px !important;
+        width: 100%;
+        object-fit: cover;
+    }
+    .about-right {
+        width: 100% !important;
+    }
+    .hd-pos {
+        font-size: 3em;
+    }
+    .hd-pos span.px-5 {
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+    .about-right {
+        padding: 25px 35px;
+    }
+    .mxw-540 {
+        max-width: 100%;
+    }
+    .mt-120 {
+        margin-top: 70px;
+    }
+    .getin-touch-wrap {
+        padding-bottom: 100px;
+    }
+    .footer-wrap {
+        padding: 20px 0 35px;
+    }
+    .footer-block {
+        display: block !important;
+        text-align: center;
+    }
+    .footer-block .mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    .footer-menu {
+        display: inline-flex;
+    }
+    .footer-menu li {
+        margin: 0 10px;
+    }
+    .main-title {
+        font-size: 1.8em;
+    }
+    .add-before-border:before, 
+    .add-before-border:after {
+        width: 32px;
+    }
+    .add-before-border:before {
+        left: -40px;
+    }
+    .add-before-border:after {
+        right: -40px;
+    }
+    .custom-form {
+        margin-top: 40px;
+    }
+    .featured-vehicles-wrap .sm-title {
+        font-size: 11px;
+    }
+}
+@media(max-width: 576px) {  
+    .sc-right .btn-white-theme {
+        padding: 13px 10px;
+        width: 100%;
+    }
+    .sc-right .btn-white-theme {
+        right: inherit;
+        left: 52px;
+        right: 52px;
+        transform: inherit;
+        width: auto;
+    }
+}

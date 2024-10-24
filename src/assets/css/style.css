@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
-:root {
-    --marquee-width: 80vw;
-    --marquee-height: 20vh;
-    --marquee-elements-displayed: 5;
-    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
-  }
 *,
 :after,
 :before {
@@ -60,7 +53,7 @@ body {
     position: absolute;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 .main-logo {
     position: relative;
@@ -416,7 +409,7 @@ body {
 }
 .main-title {
     font-family: "Playfair Display", serif;
-    font-size: 60px;
+    font-size: 3.7em;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -474,11 +467,13 @@ body {
 }
 .getin-touch-wrap {
     padding-bottom: 200px;
+    overflow: hidden;
 }
 /* Footer */
 .footer-wrap {
     background-color: #242323;
     padding: 44px 0 100px;
+    border-top: solid 1px #836F75;
 }
 .fb-contact-info {
     font-size: 1.1em;
@@ -542,55 +537,6 @@ body {
 .logos-marquee img {
     margin: 0 52px;
 }
-.marquee-content {
-    list-style: none;
-    height: 100%;
-    display: flex;
-    animation: scrolling var(--marquee-animation-duration) linear infinite;
-  }
-.marquee-content2 {
-    list-style: none;
-    height: 100%;
-    display: flex;
-    animation: scrollingLeftToRight var(--marquee-animation-duration) linear infinite;
-    direction: rtl;
-  }
-  @keyframes scrolling {
-    0% { 
-        transform: translateX(0); 
-    }
-    100% { 
-        transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); 
-    }
-  }
-  @keyframes scrollingLeftToRight {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(100%);
-    }
-  }
-  .marquee-content li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: var(--marquee-element-width);
-    max-height: 100%;
-    font-size: calc(var(--marquee-height)*3/4);
-    white-space: nowrap;
-  }
-  .marquee-content2 li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: var(--marquee-element-width);
-    max-height: 100%;
-    font-size: calc(var(--marquee-height)*3/4);
-    white-space: nowrap;
-  }
   
 .hd-pos {
     font-size: 2.5em;
@@ -662,7 +608,8 @@ body {
 }
 .cs-card {
     transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-    width: 100%;
+    width: 378px;
+    height: 378px;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
@@ -692,7 +639,6 @@ body {
     width: 100vw;
     overflow: hidden;
 }
-
 #pinContainer .panel {
     height: 100vh;
     width: 100vw;
@@ -705,4 +651,13 @@ body {
     width: 100vw;
     position: relative;
     overflow: hidden;
+}
+.logos-wrap .slick-slide .inner {
+    margin: 0 55px;
+    display: flex !important;
+    align-items: center;
+    height: 100px;
+}
+.featured-vehicles-block .slick-slide .inner {
+    padding: 60px 30px 0;
 }
