@@ -492,6 +492,7 @@ body {
     color: #fff;
 }
 .getin-touch-wrap {
+    padding-top: 100px;
     padding-bottom: 200px;
     overflow: hidden;
 }

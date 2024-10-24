@@ -428,6 +428,9 @@
     .about-left {
         width: 100% !important;
     }
+    .about-left .d-inline-block {
+        display: block !important;
+    }
     .about-left img {
         height: 45vh !important;
         width: 100%;
@@ -453,6 +456,7 @@
         margin-top: 70px;
     }
     .getin-touch-wrap {
+        padding-top: 60px;
         padding-bottom: 100px;
     }
     .footer-wrap {
