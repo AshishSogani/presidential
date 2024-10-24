@@ -357,6 +357,12 @@
     .fv-bottom {
         padding: 20px 20px;
     }
+    .logos-wrap .slick-slide .inner {
+        margin: 0 40px;
+    }
+    .cs-card {
+        height: 338px;
+    }
 }
 @media(max-width: 768px) {  
     .container, 
@@ -477,6 +483,37 @@
     .featured-vehicles-wrap .sm-title {
         font-size: 11px;
     }
+    .logos-wrap .slick-slide .inner {
+        margin: 0 20px;
+        height: 70px;
+    }
+    .logos-wrap .slick-slide .inner img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+    .logos-wrap {
+        padding: 35px 0;
+    }
+    .featured-vehicles-block .slick-slide .inner {
+        padding: 40px 15px 0;
+    }
+    .cs-card {
+        width: 280px;
+        height: 258px;
+    }
+    .cs-card__img,
+    .cs-card__img--hover {
+        height: 180px;
+    }
+    .featured-vehicles-wrap {
+        padding: 60px 0;
+    }
+    .getin-touch-wrap iframe {
+        height: 250px;
+    }
+    .getin-touch-wrap .mt-5 {
+        margin-top: 1.2rem !important;
+    }
 }
 @media(max-width: 576px) {  
     .sc-right .btn-white-theme {
@@ -489,5 +526,23 @@
         right: 52px;
         transform: inherit;
         width: auto;
+    }
+    .cs-card {
+        width: 160px;
+        height: 168px;
+    }
+    .cs-card__img,
+    .cs-card__img--hover {
+        height: 110px;
+    }
+    .fv-bottom {
+        padding: 10px;
+    }
+    .featured-vehicles-block .slick-slide .inner {
+        padding: 20px 8px 0;
+    }
+    .about-right p {
+        font-size: 1.1em;
+        line-height: 1.8em;
     }
 }
