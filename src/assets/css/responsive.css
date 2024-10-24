@@ -393,6 +393,7 @@
     }
     .common-list {
         padding-top: 0;
+        padding-left: 0;
     }
     .common-list li {
         font-size: 0.9em;
@@ -513,6 +514,13 @@
     }
     .getin-touch-wrap .mt-5 {
         margin-top: 1.2rem !important;
+    }
+    .about-right {
+        padding: 25px 20px;
+    }
+    .about-right .btn-black-theme {
+        width: 100%;
+        display: block !important;
     }
 }
 @media(max-width: 576px) {  

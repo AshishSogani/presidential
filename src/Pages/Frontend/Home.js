@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Slider from "react-slick";
 import { getImages } from '../../Componments/Frontend/const';
 import HomeAbout from '../../Componments/Frontend/Home/HomeAbout';
+import ContactForm from '../../Componments/Frontend/Common/ContactForm';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 const carData = [
@@ -63,10 +64,10 @@ const Home = () => {
         autoplaySpeed: 0,
         centerMode: false,
         cssEase: 'linear',
-        draggable:false,
-        focusOnSelect:false,
-        pauseOnFocus:false,
-        pauseOnHover:false,
+        draggable: false,
+        focusOnSelect: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
@@ -75,16 +76,16 @@ const Home = () => {
         arrows: false,
         buttons: false
     };
-    var featuredSttings1 = {
+    var featuredSettings1 = {
         speed: 6000,
         autoplay: true,
         autoplaySpeed: 0,
         centerMode: false,
         cssEase: 'linear',
-        draggable:false,
-        focusOnSelect:true,
-        pauseOnFocus:true,
-        pauseOnHover:true,
+        draggable: false,
+        focusOnSelect: true,
+        pauseOnFocus: true,
+        pauseOnHover: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
@@ -92,18 +93,18 @@ const Home = () => {
         initialSlide: 1,
         arrows: false,
         buttons: false,
-        rtl:true
+        rtl: true
     };
-    var featuredSttings2 = {
+    var featuredSettings2 = {
         speed: 6000,
         autoplay: true,
         autoplaySpeed: 0,
         centerMode: false,
         cssEase: 'linear',
-        draggable:false,
-        focusOnSelect:true,
-        pauseOnFocus:true,
-        pauseOnHover:true,
+        draggable: false,
+        focusOnSelect: true,
+        pauseOnFocus: true,
+        pauseOnHover: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
@@ -112,71 +113,78 @@ const Home = () => {
         arrows: false,
         buttons: false
     };
+    const [isMobileView, setIsMobileView] = useState(false);
+    const updateView = () => {
+        setIsMobileView(window.innerWidth <= 991);
+    };
+    useEffect(() => {
+        updateView();
+    }, []);
     return (
         <>
-        <div className='parallax-wrap'>
-            <section className="banner-wrap home-banner py-0">
-                <div className='video-block'>
-                    <div className='video-container'>
-                        <iframe width="100%" height="750" src="https://www.youtube.com/embed/2_lpbI6f7X8?si=RvEAIWU9fWN4HmPA&autoplay=1&mute=1&loop=1&playlist=2_lpbI6f7X8&controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                    </div>
-                </div>
-                <div className='banner-pos'>
-                    <div className='banner-title wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s"><span className='text-theme'>Experience & Excellence</span> <br />Over 100 Cars in Stock</div>
-                    <div className='mt-50 text-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
-                        <button className='btn-black-theme' type='button'>View Inventory</button>
-                    </div>
-                </div>
-            </section>
-            <section className='services-wrap'>
-                <div className='container'>
-                    <div className='row mlr-40'>
-                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
-                            <a href="#" className='service-box d-inline-block'>
-                                <img src={getImages('slide-1.png')} alt='' />
-                                <div className='service-pos'><span>View Inventory</span></div>
-                            </a>
-                        </div>
-                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
-                            <a href="#" className='service-box d-inline-block'>
-                                <img src={getImages('slide-2.png')} alt='' />
-                                <div className='service-pos'><span>Sell or Trade</span></div>
-                            </a>
-                        </div>
-                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="1.5s">
-                            <a href="#" className='service-box d-inline-block'>
-                                <img src={getImages('slide-3.png')} alt='' />
-                                <div className='service-pos'><span>Service Center</span></div>
-                            </a>
-                        </div>
-                        <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="2s">
-                            <a href="#" className='service-box d-inline-block'>
-                                <img src={getImages('slide-4.png')} alt='' />
-                                <div className='service-pos'><span>Specials</span></div>
-                            </a>
+            <div className='parallax-wrap'>
+                <section className="banner-wrap home-banner py-0">
+                    <div className='video-block'>
+                        <div className='video-container'>
+                            <iframe width="100%" height="750" src="https://www.youtube.com/embed/2_lpbI6f7X8?si=RvEAIWU9fWN4HmPA&autoplay=1&mute=1&loop=1&playlist=2_lpbI6f7X8&controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className='service-center-wrap'>
-                <div className='container'>
-                    <div className='service-center-box d-flex align-items-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div className='sc-left'>
-                            <div className='lg-title'>Service Center</div>
-                            <ul className='common-list'>
-                                <li>Full Service Department</li>
-                                <li>Body Shop</li>
-                                <li>Free Estimates</li>
-                                <li>Free Loaner & Shuttle</li>
-                            </ul>
-                        </div>
-                        <div className='sc-right'>
-                            <a href='#' className='btn-white-theme'>Schedule Service</a>
+                    <div className='banner-pos'>
+                        <div className='banner-title wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s"><span className='text-theme'>Experience & Excellence</span> <br />Over 100 Cars in Stock</div>
+                        <div className='mt-50 text-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
+                            <button className='btn-black-theme' type='button'>View Inventory</button>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className='logos-wrap wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
+                </section>
+                <section className='services-wrap'>
+                    <div className='container'>
+                        <div className='row mlr-40'>
+                            <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
+                                <a href="#" className='service-box d-inline-block'>
+                                    <img src={getImages('slide-1.png')} alt='' />
+                                    <div className='service-pos'><span>View Inventory</span></div>
+                                </a>
+                            </div>
+                            <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="1s">
+                                <a href="#" className='service-box d-inline-block'>
+                                    <img src={getImages('slide-2.png')} alt='' />
+                                    <div className='service-pos'><span>Sell or Trade</span></div>
+                                </a>
+                            </div>
+                            <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="1.5s">
+                                <a href="#" className='service-box d-inline-block'>
+                                    <img src={getImages('slide-3.png')} alt='' />
+                                    <div className='service-pos'><span>Service Center</span></div>
+                                </a>
+                            </div>
+                            <div className='col-md-6 wow fadeInUp' data-wow-duration="1s" data-wow-delay="2s">
+                                <a href="#" className='service-box d-inline-block'>
+                                    <img src={getImages('slide-4.png')} alt='' />
+                                    <div className='service-pos'><span>Specials</span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='service-center-wrap'>
+                    <div className='container'>
+                        <div className='service-center-box d-flex align-items-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
+                            <div className='sc-left'>
+                                <div className='lg-title'>Service Center</div>
+                                <ul className='common-list'>
+                                    <li>Full Service Department</li>
+                                    <li>Body Shop</li>
+                                    <li>Free Estimates</li>
+                                    <li>Free Loaner & Shuttle</li>
+                                </ul>
+                            </div>
+                            <div className='sc-right'>
+                                <a href='#' className='btn-white-theme'>Schedule Service</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='logos-wrap wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
                     <Slider {...settings}>
                         <div>
                             <div className='inner'>
@@ -184,187 +192,167 @@ const Home = () => {
                             </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('porsche-logo.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('maserati-logo.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('porsche-logo.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('ferrari-logo.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('bmw-logo.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('maserati-logo.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('audi.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('logo-lambo.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('ferrari-logo.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('landrover-logo.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('logo-benz.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('bmw-logo.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('porsche-logo.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('maserati-logo.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('audi.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('ferrari-logo.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('bmw-logo.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('logo-lambo.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('audi.webp')} alt='' />
-                        </div>
-                        </div>
-                        <div>
-                        <div className='inner'>
-                            <img src={getImages('logo-lambo.webp')} alt='' />
-                        </div>
+                            <div className='inner'>
+                                <img src={getImages('landrover-logo.webp')} alt='' />
+                            </div>
                         </div>
                         <div>
-                        <div className='inner'>
-                            <img src={getImages('landrover-logo.webp')} alt='' />
+                            <div className='inner'>
+                                <img src={getImages('logo-benz.webp')} alt='' />
+                            </div>
                         </div>
-                    </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('porsche-logo.webp')} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('maserati-logo.webp')} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('ferrari-logo.webp')} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('bmw-logo.webp')} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('audi.webp')} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('logo-lambo.webp')} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <div className='inner'>
+                                <img src={getImages('landrover-logo.webp')} alt='' />
+                            </div>
+                        </div>
                     </Slider>
-            </section>
-            <HomeAbout/>
-            <section className='featured-vehicles-wrap'>
-                <div className='container'>
-                    <div className='main-title tex-center'>
-                        <span className='position-relative add-before-border add-after-border'>Featured Vehicles</span>
-                    </div>
-                    <div className='featured-vehicles-block'>
-                        <Slider {...featuredSttings1}>
-                            {carData.map((car, index) => (
-                                <div>
-                                    <div className='inner'>
-                                        <article className="cs-card cs-card--2 fv-box">
-                                            <div className="cs-card__img fv-top"
-                                                style={{
-                                                    backgroundImage: `url(${getImages(car.image)})`,
-                                                }}
-                                            ></div>
-                                            <a href="#" className="cs-card_link">
-                                                <div className="cs-card__img--hover fv-top"
-                                                    style={{
-                                                        backgroundImage: `url(${getImages(car.image)})`,
-                                                    }}></div>
-                                            </a>
-                                            <div className="fv-bottom">
-                                                <div className="sm-title text-orange font-bold">{car.title}</div>
-                                                <div className="d-flex align-items-center justify-content-between mt-1">
-                                                    <div className="sm-title">{car.price}</div>
-                                                    <div className="sm-title opacity-0-4">{car.mileage}</div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                        <Slider {...featuredSttings2}>
-                            {carData.map((car, index) => (
-                                <div>
-                                    <div className='inner'>
-                                        <article className="cs-card cs-card--2 fv-box">
-                                            <div className="cs-card__img fv-top"
-                                                style={{
-                                                    backgroundImage: `url(${getImages(car.image)})`,
-                                                }}
-                                            ></div>
-                                            <a href="#" className="cs-card_link">
-                                                <div className="cs-card__img--hover fv-top"
-                                                    style={{
-                                                        backgroundImage: `url(${getImages(car.image)})`,
-                                                    }}></div>
-                                            </a>
-                                            <div className="fv-bottom">
-                                                <div className="sm-title text-orange font-bold">{car.title}</div>
-                                                <div className="d-flex align-items-center justify-content-between mt-1">
-                                                    <div className="sm-title">{car.price}</div>
-                                                    <div className="sm-title opacity-0-4">{car.mileage}</div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                    </div>
-                </div>
-            </section>
-            <section className='getin-touch-wrap'>
-                <div className='container'>
-                    <div className='main-title tex-center'>
-                        <span className='position-relative add-before-border add-after-border'>Get in Touch</span>
-                    </div>
-                    <div className='mt-5 row mlr-40'>
-                        <div className='col-md-6 pt-2 wow fadeInLeft' data-wow-duration="1s" data-wow-delay="0.5s">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.9641580392713!2d-80.0727677!3d26.4246332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8e041ac09b827%3A0xe449141e674b46fc!2s3201%20S%20Federal%20Hwy%2C%20Delray%20Beach%2C%20FL%2033483%2C%20USA!5e0!3m2!1sen!2sin!4v1729681912393!5m2!1sen!2sin" width="100%" height="465" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                            <div className='gt-info mt-5'>
-                                <div className='gt-address'>3201 S. Federal Hwy Delray Beach, FL 33483</div>
-                                <div className='gt-phone mt-2'>(561) 266-000</div>
-                            </div>
+                </section>
+                <HomeAbout />
+                <section className='featured-vehicles-wrap'>
+                    <div className='container'>
+                        <div className='main-title tex-center'>
+                            <span className='position-relative add-before-border add-after-border'>Featured Vehicles</span>
                         </div>
-                        <div className='col-md-6 wow fadeInRight' data-wow-duration="1s" data-wow-delay="1s">
-                            <div className='custom-form'>
-                                <div className='form-group'>
-                                    <label>Full Name</label>
-                                    <input type='text' className='form-control' />
+                        <div className='featured-vehicles-block'>
+                            <Slider {...featuredSettings1}>
+                                {carData.map((car, index) => (
+                                    <div key={index}>
+                                        <div className='inner'>
+                                            <article className="cs-card cs-card--2 fv-box">
+                                                <div className="cs-card__img fv-top"
+                                                    style={{
+                                                        backgroundImage: `url(${getImages(car.image)})`,
+                                                    }}
+                                                ></div>
+                                                <a href="#" className="cs-card_link">
+                                                    <div className="cs-card__img--hover fv-top"
+                                                        style={{
+                                                            backgroundImage: `url(${getImages(car.image)})`,
+                                                        }}></div>
+                                                </a>
+                                                <div className="fv-bottom">
+                                                    <div className="sm-title text-orange font-bold">{car.title}</div>
+                                                    <div className="d-flex align-items-center justify-content-between mt-1">
+                                                        <div className="sm-title">{car.price}</div>
+                                                        <div className="sm-title opacity-0-4">{car.mileage}</div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Slider>
+                            <Slider {...featuredSettings2}>
+                                {carData.map((car, index) => (
+                                    <div key={index}>
+                                        <div className='inner'>
+                                            <article className="cs-card cs-card--2 fv-box">
+                                                <div className="cs-card__img fv-top"
+                                                    style={{
+                                                        backgroundImage: `url(${getImages(car.image)})`,
+                                                    }}
+                                                ></div>
+                                                <a href="#" className="cs-card_link">
+                                                    <div className="cs-card__img--hover fv-top"
+                                                        style={{
+                                                            backgroundImage: `url(${getImages(car.image)})`,
+                                                        }}></div>
+                                                </a>
+                                                <div className="fv-bottom">
+                                                    <div className="sm-title text-orange font-bold">{car.title}</div>
+                                                    <div className="d-flex align-items-center justify-content-between mt-1">
+                                                        <div className="sm-title">{car.price}</div>
+                                                        <div className="sm-title opacity-0-4">{car.mileage}</div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Slider>
+                        </div>
+                    </div>
+                </section>
+                <section className='getin-touch-wrap'>
+                    <div className='container'>
+                        <div className='main-title tex-center'>
+                            <span className='position-relative add-before-border add-after-border'>Get in Touch</span>
+                        </div>
+                        <div className='mt-5 row mlr-40'>
+                            <div className='col-md-6 pt-2 wow fadeInLeft' data-wow-duration="1s" data-wow-delay="0.5s">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.9641580392713!2d-80.0727677!3d26.4246332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8e041ac09b827%3A0xe449141e674b46fc!2s3201%20S%20Federal%20Hwy%2C%20Delray%20Beach%2C%20FL%2033483%2C%20USA!5e0!3m2!1sen!2sin!4v1729681912393!5m2!1sen!2sin" width="100%" height="465" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                <div className='gt-info mt-5'>
+                                    <div className='gt-address'>3201 S. Federal Hwy Delray Beach, FL 33483</div>
+                                    <div className='gt-phone mt-2'>(561) 266-000</div>
                                 </div>
-                                <div className='form-group'>
-                                    <label>Email</label>
-                                    <input type='text' className='form-control' />
-                                </div>
-                                <div className='form-group'>
-                                    <label>Phone</label>
-                                    <input type='text' className='form-control' />
-                                </div>
-                                <div className='form-group'>
-                                    <label>Comments</label>
-                                    <textarea className='form-control h-150'></textarea>
-                                </div>
-                                <div className='mt-5 pt-3'>
-                                    <button type='submit' className='btn-black-theme w-100'>Send</button>
-                                </div>
+                            </div>
+                            <div className='col-md-6 wow fadeInRight' data-wow-duration="1s" data-wow-delay="1s">
+                                <ContactForm/>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
             </div>
         </>
     )

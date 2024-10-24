@@ -634,17 +634,22 @@ body {
 .parallax-wrap {
     overflow: hidden;
 }
-#pinContainer {
+#pinContainer,
+#pinContainer1 {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
 }
-#pinContainer .panel {
+#pinContainer .panel,
+#pinContainer1 .panel {
     height: 100vh;
     width: 100vw;
     position: absolute;
     z-index: 2;
     overflow: hidden; 
+}
+.hm-about-block > .scrollmagic-pin-spacer {
+    padding-bottom: 0 !important;
 }
 .panel-inner {
     height: 100vh;
@@ -660,4 +665,8 @@ body {
 }
 .featured-vehicles-block .slick-slide .inner {
     padding: 60px 30px 0;
+}
+.custom-form .text-danger {
+    font-size: 13px;
+    margin-top: 4px;
 }
