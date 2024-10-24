@@ -83,9 +83,9 @@ const Home = () => {
         centerMode: false,
         cssEase: 'linear',
         draggable: false,
-        focusOnSelect: true,
-        pauseOnFocus: true,
-        pauseOnHover: true,
+        focusOnSelect: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
@@ -102,9 +102,9 @@ const Home = () => {
         centerMode: false,
         cssEase: 'linear',
         draggable: false,
-        focusOnSelect: true,
-        pauseOnFocus: true,
-        pauseOnHover: true,
+        focusOnSelect: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
@@ -126,7 +126,7 @@ const Home = () => {
                 <section className="banner-wrap home-banner py-0">
                     <div className='video-block'>
                         <div className='video-container'>
-                            <iframe width="100%" height="750" src="https://www.youtube.com/embed/2_lpbI6f7X8?si=RvEAIWU9fWN4HmPA&autoplay=1&mute=1&loop=1&playlist=2_lpbI6f7X8&controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                            <iframe width="100%" height="750" src="https://www.youtube.com/embed/2_lpbI6f7X8?si=RvEAIWU9fWN4HmPA&autoplay=1&mute=1&loop=1&playlist=2_lpbI6f7X8&controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                     </div>
                     <div className='banner-pos'>
@@ -168,7 +168,7 @@ const Home = () => {
                 </section>
                 <section className='service-center-wrap'>
                     <div className='container'>
-                        <div className='service-center-box d-flex align-items-center wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div className='service-center-box d-flex align-items-center wow fadeIn' data-wow-duration="1s" data-wow-delay="0.5s">
                             <div className='sc-left'>
                                 <div className='lg-title'>Service Center</div>
                                 <ul className='common-list'>
@@ -184,7 +184,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className='logos-wrap wow fadeInUp' data-wow-duration="1s" data-wow-delay="0.5s">
+                <section className='logos-wrap wow fadeIn' data-wow-duration="1s" data-wow-delay="0.5s">
                     <Slider {...settings}>
                         <div>
                             <div className='inner'>
@@ -341,10 +341,11 @@ const Home = () => {
                         </div>
                         <div className='mt-5 row mlr-40'>
                             <div className='col-md-6 pt-2 wow fadeInLeft' data-wow-duration="1s" data-wow-delay="0.5s">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.9641580392713!2d-80.0727677!3d26.4246332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8e041ac09b827%3A0xe449141e674b46fc!2s3201%20S%20Federal%20Hwy%2C%20Delray%20Beach%2C%20FL%2033483%2C%20USA!5e0!3m2!1sen!2sin!4v1729681912393!5m2!1sen!2sin" width="100%" height="465" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://snazzymaps.com/embed/654124" width="100%" height="465" style={{border:'none'}}></iframe>
+
                                 <div className='gt-info mt-5'>
                                     <div className='gt-address'>3201 S. Federal Hwy Delray Beach, FL 33483</div>
-                                    <div className='gt-phone mt-2'>(561) 266-000</div>
+                                    <div className='gt-phone mt-2'><a href='tel:561266000' className='text-white'>(561) 266-000</a></div>
                                 </div>
                             </div>
                             <div className='col-md-6 wow fadeInRight' data-wow-duration="1s" data-wow-delay="1s">

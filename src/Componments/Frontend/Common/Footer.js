@@ -55,13 +55,13 @@ const Footer = () => {
                 <div className='footer-title d-none d-md-block'>Stay Connected</div>
                 <ul className='footer-menu'>
                   <li>
-                    <a href='#'><span className='social-icon'><img src={getImages('ico-facebook.svg')}/></span> <span className='d-none d-md-block'>Facebook</span></a>
+                    <a href='#'><span className='social-icon'><img src={getImages('ico-facebook.svg')}/></span> <span className='d-none d-md-inline-block'>Facebook</span></a>
                   </li>
                   <li>
-                    <a href='#'><span className='social-icon'><img src={getImages('ico-twitter.svg')}/></span> <span className='d-none d-md-block'>Twtiter</span></a>
+                    <a href='#'><span className='social-icon'><img src={getImages('ico-twitter.svg')}/></span> <span className='d-none d-md-inline-block'>Twtiter</span></a>
                   </li>
                   <li>
-                    <a href='#'><span className='social-icon'><img src={getImages('ico-instagram.svg')}/></span> <span className='d-none d-md-block'>Instagram</span></a>
+                    <a href='#'><span className='social-icon'><img src={getImages('ico-instagram.svg')}/></span> <span className='d-none d-md-inline-block'>Instagram</span></a>
                   </li>
                 </ul>
               </div>
